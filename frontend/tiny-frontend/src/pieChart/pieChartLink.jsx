@@ -6,7 +6,16 @@ import {
 } from "chart.js";
 import { Pie } from "react-chartjs-2";
 
-ChartJS.register(ArcElement, Tooltip, Legend);
+ChartJS.register(ArcElement, Tooltip, Legend); 
+
+const GenerateRandomColor = () => {
+  const letters = "0123456789ABCDEF";
+  let color = "#";
+  for (let i=0;i<6;i++){
+    color += letters[Math.floor(Math.random()*16)]
+  }
+  return color;
+}
 
 const LinksPieChart = ({ links }) => {
   const chartData = {
@@ -15,14 +24,7 @@ const LinksPieChart = ({ links }) => {
       {
         label: "Clicks",
         data: links.map((l) => l.clicks),
-        backgroundColor: [
-          "#6366f1",
-          "#22c55e",
-          "#f59e0b",
-          "#ef4444",
-          "#06b6d4",
-          "#8b5cf6",
-        ],
+        backgroundColor: links.map(() => GenerateRandomColor()),
         borderWidth: 1,
       },
     ],
