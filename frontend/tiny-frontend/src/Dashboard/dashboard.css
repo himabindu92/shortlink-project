@@ -1,0 +1,255 @@
+/* ------------------ GLOBAL CONTAINER ------------------ */
+.background-container {
+  min-height: 100vh;
+  background: linear-gradient(
+    120deg,
+    #e0f2fe,
+    #f0f9ff,
+    #eef2ff
+  );
+  background-size: 200% 200%;
+  animation: simpleMove 10s ease-in-out infinite;
+}
+
+@keyframes simpleMove {
+  0% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+  100% {
+    background-position: 0% 50%;
+  }
+}
+
+
+/* ------------------ NAVBAR ------------------ */
+.nav-bgcolor {
+  background-color: #4f46e5;
+  padding: 18px 26px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  color: white;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.15);
+}
+
+.dash-board {
+  margin: 0;
+  font-size: 28px;
+  font-weight: 700;
+} 
+
+.form-card{
+      width: 90%;
+  max-width: 600px;
+  margin: 40px auto;
+  background: #ffffff;
+  padding: 25px 30px;
+  border-radius: 12px;
+  box-shadow: 0px 6px 20px rgba(0, 0, 0, 0.12);
+  display: flex;
+  flex-direction: column;
+  gap: 18px;
+}
+
+/* ------------------ INPUT AREA ------------------ */
+.url-card-container {
+  display: flex;
+  flex-direction: column;
+  margin-top: 25px;
+  margin-left: 20px;
+  font-weight: 600;
+  font-family: "Roboto";
+} 
+.error-message{
+  color: red;
+  margin-top: 5px;
+  font-size: 14px;
+}
+
+.search-container{
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  
+  margin-bottom: 15px;
+  margin-right:30px
+}
+
+.search{
+  width: 30%;
+  height: 30px;
+  background-color: #f2e7e7;
+  margin-top: 5px;
+  padding: 8px 12px;
+  border: 2px solid #d1d5db;
+  border-radius: 6px;
+  outline: none;
+  transition: all;
+  font-size: 16px;
+   margin-left: 40px;
+   padding-left:20px;
+} 
+
+.search:hover{
+  background-color: rgb(216, 245, 245); 
+  border-color: #4f46e5;
+  box-shadow: 0 0 6px rgba(79, 70, 229, 0.4);
+  transform: scale(1.10);
+ 
+}
+.url-name,
+.code-name {
+  width: 80%;
+  height: 35px;
+  background-color: #f2e7e7;
+  margin-top: 5px;
+  padding: 8px 12px;
+  border: 2px solid #d1d5db;
+  border-radius: 6px;
+  outline: none;
+  transition: 0.3s;
+  font-size: 16px;
+}
+
+.url-name:hover,
+.code-name:hover {
+  background-color: rgb(216, 245, 245);
+}
+
+.url-name:focus,
+.code-name:focus {
+  border-color: #4f46e5;
+  box-shadow: 0 0 6px rgba(79, 70, 229, 0.4);
+} 
+.loading{
+  margin-left: 20px;
+  font-size: 18px;
+  font-weight: 600;
+  color:black
+}
+
+/* ------------------ BUTTON ------------------ */
+.button {
+  margin-left: 10px;
+  margin-top: 20px;
+  padding: 10px 20px;
+  background-color: #3a30f5;
+  border: none;
+  color: white;
+  font-size: 16px;
+  border-radius: 6px;
+  cursor: pointer;
+  transition: 0.3s;
+  width:160px;
+  margin-left: 10px;
+} 
+
+.Linkbutton{
+  cursor: pointer;
+   transition: all 0.3s ease;
+} 
+
+.Healthcheck-button{
+  cursor: pointer;
+   transition: all 0.3s ease;
+} 
+
+.Healthcheck-button :hover{
+  background-color: #6b66b0;
+  font-weight: 600;
+   transform: translateY(-2px);
+}
+
+.Linkbutton:hover{
+  color: #4f46e5;
+  font-weight: 600;
+   transform: translateY(-2px);
+}
+
+.button:hover {
+  background-color: #3c38c5; 
+  transform:scale(1.10);
+}
+
+.del-btn{
+  padding: 6px 12px;
+  background-color: #1595d5;
+  border: none;
+  color: white;
+  font-size: 14px;
+  border-radius: 6px;
+  cursor: pointer;
+  transition: 0.3s;
+} 
+
+.del-btn:hover {
+  background-color: #e42222;
+  transform: translate3d(5px, 1px,0);
+}
+
+/* ------------------ TABLE ------------------ */
+.table-container {
+  width: 95%;
+  margin: 40px auto;
+  border-collapse: collapse;
+  background: white;
+  border-radius: 8px;
+  overflow: hidden;
+  font-family: "Roboto";
+}
+
+.table-container th,
+.table-container td {
+  padding: 14px;
+  border-bottom: 1px solid #e5e7eb;
+  text-align: left;
+}
+
+.table-colimn-name {
+  background-color: #b37f1e;
+  color: white;
+  font-size: 18px;
+ 
+}
+
+.row-value:hover {
+  background-color: #f9fafb;
+}
+
+.original-url-name {
+  color: #8cbe99;
+  word-break: break-all;
+}
+
+.domain-name-url {
+  color: #111827;
+  font-weight: 600;
+  text-decoration: none;
+}
+
+.domain-name-url:hover {
+  text-decoration: underline;
+} 
+
+.code-link{
+  color:rgb(16, 101, 84);
+  font-weight: 600;
+  text-decoration: underline;
+  cursor: pointer;
+}
+
+/* ------------------ RESPONSIVE ------------------ */
+@media (max-width: 768px) {
+  .url-name,
+  .code-name {
+    width: 95%;
+  }
+
+  .table-container {
+    font-size: 14px;
+     width:100%;
+  }
+}
