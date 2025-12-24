@@ -1,6 +1,6 @@
 import { useEffect, useState } from "react";
 import { useNavigate } from "react-router-dom";
-import axios from "axios";
+import api from "../api/axios.js";
 import { useCallback } from "react";
 import "./dashboard.css";
 
@@ -23,7 +23,7 @@ const Dashboard = () => {
   // Fetch all links
   const getLinks = useCallback(async () => {
     setLoading(true);
-    const res = await axios.get("/api/links");
+    const res = await api.get("/api/links");
     setLinks(res.data);
     setLoading(false);
   }, []);
@@ -62,7 +62,7 @@ const Dashboard = () => {
       return ;
     }
    try {
-     await axios.post("/api/links", { url, code });
+     await api.post("/api/links", { url, code });
         setUrl("");
         setCode("");
         getLinks();
@@ -71,14 +71,14 @@ const Dashboard = () => {
      } catch (err) {
       console.log(err)
     }finally{
-      
+      console.log("Request completed")
     }
   };
 
   // Delete link
   const deleteLink = async (code) => {
     try {
-      await axios.delete(`/api/links/${code}`);
+      await api.delete(`/api/links/${code}`);
     
       setView("table");
       getLinks();
@@ -96,7 +96,7 @@ const Dashboard = () => {
 
   //update Link 
  const getupdateLink = (code) => {
-  const BASE_URL = import.meta.env.VITE_API_BASE || "http://localhost:3000";
+  const BASE_URL = import.meta.env.VITE_API_BASE_URL || "http://localhost:3000";
   window.open(`${BASE_URL}/${code}`, "_blank");
 };
 
