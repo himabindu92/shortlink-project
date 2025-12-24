@@ -1,28 +1,19 @@
 /* ------------------ GLOBAL CONTAINER ------------------ */
 .background-container {
   min-height: 100vh;
+  width:100%;
+  background-size: cover;
+  margin:0;
+  padding:0;
+  background-repeat: no-repeat;
   background: linear-gradient(
     120deg,
-    #e0f2fe,
+    #568fb6,
     #f0f9ff,
     #eef2ff
   );
-  background-size: 200% 200%;
-  animation: simpleMove 10s ease-in-out infinite;
+  font-family: "Roboto", sans-serif;
 }
-
-@keyframes simpleMove {
-  0% {
-    background-position: 0% 50%;
-  }
-  50% {
-    background-position: 100% 50%;
-  }
-  100% {
-    background-position: 0% 50%;
-  }
-}
-
 
 /* ------------------ NAVBAR ------------------ */
 .nav-bgcolor {
@@ -33,6 +24,17 @@
   align-items: center;
   color: white;
   box-shadow: 0 2px 8px rgba(0,0,0,0.15);
+} 
+
+.logo{
+  height: 40px;
+  width: 40px;
+  margin-right: 10px;
+} 
+
+.logo-container{
+  display: flex;
+  align-items: center;
 }
 
 .dash-board {
@@ -42,8 +44,8 @@
 } 
 
 .form-card{
-      width: 90%;
-  max-width: 600px;
+  width: 90%;
+  max-width: 800px;
   margin: 40px auto;
   background: #ffffff;
   padding: 25px 30px;
@@ -125,6 +127,8 @@
   box-shadow: 0 0 6px rgba(79, 70, 229, 0.4);
 } 
 .loading{
+  display: inline-flex;
+  align-self: center;
   margin-left: 20px;
   font-size: 18px;
   font-weight: 600;
@@ -132,6 +136,10 @@
 }
 
 /* ------------------ BUTTON ------------------ */
+.button-container{
+  display: flex;
+  gap: 15px;
+}
 .button {
   margin-left: 10px;
   margin-top: 20px;
@@ -241,15 +249,161 @@
   cursor: pointer;
 }
 
-/* ------------------ RESPONSIVE ------------------ */
-@media (max-width: 768px) {
-  .url-name,
-  .code-name {
-    width: 95%;
-  }
+/* ------------------ CHART CONTAINER ------------------ */.chart-container {
+  width: 60%;
+  max-width: 500px;
+  margin: 40px auto;
+  background: white;
+  padding: 20px;
+  border-radius: 12px;
+  box-shadow: 0px 6px 20px rgba(0, 0, 0, 0.12);
+}
 
-  .table-container {
-    font-size: 14px;
-     width:100%;
+.chart-container h2 {
+  text-align: center;
+  margin-bottom: 20px;
+}
+
+@media (max-width: 768px) {
+  .chart-container {
+    width: 95%;
+    padding: 15px;
   }
 }
+@media (max-width: 480px) {
+  .chart-container { 
+    width: 100%;
+    padding: 10px;
+  } 
+} 
+
+
+/* ------------------ RESPONSIVE ------------------ */
+
+
+/* ---------- Tablets & small laptops ---------- */
+@media (max-width: 1024px) {
+  .search {
+    width: 45%;
+    margin-left: 20px;
+  }
+
+  .form-card {
+    width: 90%;
+  } 
+    .search-container {
+    flex-direction: row;
+  
+    gap: 10px;
+    margin-left:10px;
+  }
+
+  .url-name,
+  .code-name {
+    width: 90%;
+  }
+}
+
+/* ---------- Mobile devices ---------- */
+@media (max-width: 768px) {
+  /* Navbar */
+  .nav-bgcolor {
+    flex-direction: row;
+    align-items: flex-start;
+    gap: 10px;
+    padding: 15px;
+    width:90%;
+  } 
+
+  .button-container{
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+}
+
+  .dash-board {
+    font-size: 20px;
+
+  }
+
+  /* Form */
+  .form-card {
+    width: 80%;
+    padding: 20px;
+    margin: 20px auto;
+  }
+
+  .url-card-container {
+    margin-left: 0;
+  }
+
+  .url-name,
+  .code-name {
+    width: 80%;
+    font-size: 15px;
+  }
+
+  /* Search */
+  .search-container {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 10px;
+    margin-left:10px;
+  }
+
+  .search {
+    width: 60%;
+    margin-left: 0;
+  }
+
+  /* Buttons */
+  .button {
+    width: 120px;
+    margin-left: 0;
+    margin-top: 15px;
+  }
+
+  .del-btn {
+    width: 100%;
+    text-align: center;
+  }
+
+  /* Table */
+  .table-container {
+    width: 100%;
+    font-size: 14px;
+    overflow-x: auto;
+    display: block;
+  }
+}
+
+/* ---------- Very small devices (phones) ---------- */
+@media (max-width: 480px) {
+  .dash-board {
+    font-size: 16px;
+  } 
+
+  .button-container{
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+}
+
+  .button {
+    font-size: 12px;
+    padding: 10px;
+  }
+
+  .search {
+    font-size: 14px;
+    height: 36px;
+  }
+
+  .table-container th,
+  .table-container td {
+    padding: 10px;
+    font-size: 13px;
+  }
+}
+
+/* ---------- Disable hover scale on touch devices ---------- */

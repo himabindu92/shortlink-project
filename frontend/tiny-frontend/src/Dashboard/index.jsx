@@ -2,6 +2,7 @@ import { useEffect, useState } from "react";
 import { useNavigate } from "react-router-dom";
 import api from "../api/axios.js";
 import { useCallback } from "react";
+import LinksPieChart from "../pieChart/pieChartLink.jsx";
 import "./dashboard.css";
 
 
@@ -105,9 +106,14 @@ const Dashboard = () => {
   
     <div className="background-container">
       {/* NAVBAR */}
-      <nav className="nav-bgcolor">
-        <h1 className="dash-board">Dashboard</h1>
+      <nav className="nav-bgcolor"> 
 
+        <div className="logo-container">
+          <img src="/ligo_short_url.png" alt="Website Logo" className="logo" />
+           <h1 className="dash-board">Dashboard</h1>
+        </div>
+       
+      <div className="button-container">
         <button
           onClick={() => setView("table")}
           className={view === "table" ? "active Linkbutton" : ""} 
@@ -120,8 +126,15 @@ const Dashboard = () => {
           className={view === "health" ? "active Healthcheck-button" : ""}
         >
           Healthcheck
-        </button>
+        </button> 
 
+        <button
+        onClick={() => setView("chart")}
+        className={view === "chart" ? "active Linkbutton" : ""}
+      >
+        Analytics
+        </button>
+      </div>
       
         
       </nav>
@@ -171,7 +184,7 @@ const Dashboard = () => {
                   className="button"
                 >
                   Static View
-            </button> 
+          </button> 
       </div>
       )}
 
@@ -224,6 +237,15 @@ const Dashboard = () => {
       )
       )}
     
+      {/* CHART VIEW */} 
+      {view === "chart" && (
+      <div className="chart-container">
+        <h2>Link Click Analysis</h2> 
+        <div className="chart-link">
+        <LinksPieChart links={links} /> 
+        </div>
+      </div>
+)}
 
   
       {/* HEALTH VIEW */}

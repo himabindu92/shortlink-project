@@ -1,7 +1,7 @@
 .stats-container{
   width: 90%;
-  margin: 40px auto;
-  padding: 30px;
+  margin: 10px;
+  padding: 10px;
   background-color: #9e9f4e;
   border-radius: 12px;
   box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
@@ -9,12 +9,18 @@
   margin-left:30px;
   display: flex;
   flex-direction: column;
+  align-items: center;
 }
 
 .stats-background{
-  background-color: #f0f0ff;
+  background-color: #c7c7dd;
   min-height: 100vh;
   padding: 40px 20px;
+  margin:0;
+  font-family: "Roboto", sans-serif;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 }
 
 h2{
@@ -40,7 +46,8 @@ h2{
   border-left: 4px solid #4a4aff;
   background: #f8f8ff;
   border-radius: 6px;
-  color: #352d2d;
+  color: #352d2d; 
+  width:90%;
    
   /* animation */
   opacity: 0;
@@ -66,9 +73,10 @@ h2{
 
 
 .back-button {
-  display: inline-block;
-  margin-top: 25px;
-  padding: 10px 18px;
+  display: flex;
+  align-self: flex-start;
+  margin-top: 5px;
+  padding: 10px;
   background: #4a4aff;
   color: #fff;
   text-decoration: none;
@@ -92,10 +100,70 @@ h2{
 .static-code-link{
   list-style-type: none;
   display: flex;
-  margin-right:20px; 
+  align-items: center;
   gap:10px;
   flex-wrap: wrap;
-  margin-left: 30px;
+  margin-top: 15px;
  
 } 
+
+
+
+
+/* ------------------ RESPONSIVE ------------------ */ 
+
+
+/* ---------- Tablets & small laptops ---------- */ 
+@media (max-width: 1024px) {
+  .stats-container {
+    width: 95%;
+    padding: 25px;
+  }
+
+  .stats-item {
+    font-size: 17px;
+    padding: 11px;
+  }
+
+  .back-button {
+    padding: 9px 16px;
+    font-size: 15px;
+  }
+}
+
+/* ---------- Small devices (tablets) ---------- */
+@media (max-width: 768px) {
+  .stats-container {
+    width: 95%;
+    padding: 20px;
+  }
+
+  .stats-item {
+    font-size: 16px;
+    padding: 10px;
+  }
+
+  .back-button {
+    padding: 8px 14px;
+    font-size: 14px;
+  }
+} 
+
+/* ---------- Very small devices (phones) ---------- */
+@media (max-width: 480px) {
+  .stats-container {
+    padding: 15px;
+  }
+
+  .stats-item {
+    font-size: 14px;
+    padding: 8px;
+  }
+
+  .back-button {
+    padding: 6px 10px;
+    font-size: 12px;
+  }
+} 
+
 
