@@ -1,6 +1,6 @@
 import { useEffect, useState } from "react";
 import { useParams ,useNavigate} from "react-router-dom";
-import axios from "axios";
+import api from "../api/axios.js";
 import "./stats.css";
 
 export default function Stats() {
@@ -12,7 +12,7 @@ export default function Stats() {
 
   async function fetchStats() {
     try {
-      const res = await axios.get(`/api/links/`);
+      const res = await api.get(`/api/links/`);
       setData(res.data);
       console.log("result",res.data);
     } catch (err) {
