@@ -136,6 +136,14 @@ const Dashboard = () => {
         </button>
       </div>
       
+      <div class="hanburger-menu" onClick={() => {
+        const nav = document.querySelector('.button-container');
+        nav.classList.toggle('active-menu');
+      }}>
+        <div class="bar"></div>
+        <div class="bar"></div>
+        <div class="bar"></div>
+      </div>
         
       </nav>
 
